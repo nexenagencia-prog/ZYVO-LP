@@ -1,14 +1,3 @@
-const tools = [
-  ["Reuniões", "Vídeo com foco em contexto e performance."],
-  ["Gravações", "Reassista momentos e decisões importantes."],
-  ["Agenda", "Organize sua rotina de reuniões."],
-  ["Anotações", "Registre ideias sem sair da experiência."],
-  ["Compartilhar tela", "Apresente sem quebrar o fluxo."],
-  ["Calculadora", "Ferramentas úteis sempre por perto."],
-  ["Criar slides", "Prepare materiais dentro do ecossistema."],
-  ["Skills", "Analise sua atuação em cada reunião."],
-];
-
 const questions = [
   "Onde estou errando?",
   "O que está me faltando?",
@@ -17,75 +6,108 @@ const questions = [
   "O que devo praticar?",
 ];
 
+const tools = [
+  ["▣", "Reuniões", ""],
+  ["▶", "Gravações", ""],
+  ["□", "Agenda", ""],
+  ["▤", "Anotações", ""],
+  ["▱", "Compartilhar tela", ""],
+  ["▦", "Calculadora", ""],
+  ["▧", "Criar slides", ""],
+  ["|||", "Skills", "(análise de performance)"],
+];
+
 export default function Home() {
   return (
     <main>
-      <header className="topbar shell">
-        <a href="#inicio" className="logo"><img src="/zyvo-logo.svg" alt="ZYVO" /></a>
-        <nav>
-          <a href="#inicio">Início</a><a href="#skills">Skills</a><a href="#human">Human Pro</a><a href="#planos">Planos</a><a href="#contato">Contato</a>
-        </nav>
-        <div className="topActions"><button className="searchBtn" aria-label="Buscar">⌕</button><a href="#contato" className="blackPill">Começar agora</a></div>
-      </header>
+      <section className="heroRef" id="inicio">
+        <header className="topbar shell">
+          <a className="logo" href="#inicio" aria-label="ZYVO"><img src="/zyvo-logo.svg" alt="ZYVO" /></a>
+          <nav>
+            <a className="active" href="#inicio">Início</a>
+            <a href="#skills">Skills</a>
+            <a href="#human">Human Pro</a>
+            <a href="#planos">Planos</a>
+            <a href="#contato">Contato</a>
+          </nav>
+          <div className="topActions"><button className="search" aria-label="Buscar">⌕</button><a className="darkPill" href="#contato">Começar agora</a></div>
+        </header>
 
-      <section id="inicio" className="hero shell">
-        <span className="eyebrow">REUNIÕES INTELIGENTES</span>
-        <h1>Você termina uma reunião.<br/><span>A ZYVO descobre o que você não percebeu nela.</span></h1>
-        <p>A ZYVO é a plataforma de videoconferência com inteligência de performance humana. Faça suas reuniões, analise seu comportamento e descubra o que realmente precisa desenvolver.</p>
-        <div className="heroActions"><a className="blackPill large" href="#skills">Começar agora</a><a className="textLink" href="#como">Ver como funciona <b>↗</b></a></div>
+        <div className="heroGrid shell">
+          <div className="heroCopy">
+            <span className="eyebrow">REUNIÕES INTELIGENTES</span>
+            <h1>Converse.<br/>Evolua.<br/>Vá além.</h1>
+            <p>A ZYVO é a plataforma de videoconferência com inteligência de performance humana. Faça suas reuniões, analise seu comportamento e descubra o que realmente precisa desenvolver.</p>
+            <div className="heroActions"><a className="darkPill big" href="#contato">Começar agora</a><a className="ghostPill" href="#como"><span className="play">▶</span> Ver como funciona</a></div>
+            <div className="heroStats"><div><b>+ foco</b><span>em cada conversa</span></div><div><b>+ clareza</b><span>nas suas decisões</span></div><div><b>+ resultados</b><span>na sua carreira</span></div></div>
+          </div>
 
-        <div className="deviceScene">
-          <div className="aurora a1"/><div className="aurora a2"/>
-          <div className="laptop">
-            <div className="screen">
-              <div className="screenTop"><img src="/zyvo-logo.svg" alt="ZYVO"/><span>Reunião estratégica</span><small>•••</small></div>
-              <div className="meetingLayout">
-                <div className="speaker"><div className="face faceMain"><span>SB</span></div><div className="nameTag">Sandro Bello</div></div>
-                <div className="sidePeople"><div className="mini faceWarm"><span>AM</span></div><div className="mini faceDark"><span>RC</span></div></div>
+          <div className="heroVisual" aria-label="Interface de videoconferência ZYVO">
+            <div className="laptopMock">
+              <div className="laptopScreen">
+                <div className="screenBar"><span className="miniBrand">ZYVO</span><span>00:24:18</span><span>⚙　⊕　＋</span></div>
+                <div className="screenBody">
+                  <aside className="rail"><span>◉</span><span>▣</span><span>♙</span><span>✎</span><span>▤</span><span>▦</span></aside>
+                  <div className="videoMain personWoman"><span className="personLabel">Marina</span></div>
+                  <div className="peopleColumn"><div className="personMan"><span>Rafael</span></div><div className="personWoman2"><span>Camila</span></div><div className="personDark"><span>Ricardo</span></div></div>
+                  <div className="chatPanel"><b>Chat</b><div className="chatLine"><i className="avatar a"/><p><strong>Marina</strong><span>Ótima ideia!</span></p><small>10:24</small></div><div className="chatLine"><i className="avatar b"/><p><strong>Rafael</strong><span>Concordo, faz sentido.</span></p><small>10:25</small></div><div className="chatLine"><i className="avatar c"/><p><strong>Camila</strong><span>Vamos avançar com isso.</span></p><small>10:26</small></div><div className="chatInput">Digite uma mensagem... <span>›</span></div></div>
+                </div>
+                <div className="meetingControls"><span>♟</span><span>◈</span><span>▣</span><span>▣</span><span>♩</span><span>✦</span><b>●</b></div>
               </div>
-              <div className="controls"><i>⌁</i><i>◉</i><i>⌁</i><i>▣</i><button>Sair</button></div>
-              <div className="floatingGlass insight"><small>INSIGHT DA REUNIÃO</small><b>Você apresentou a solução antes de explorar totalmente o problema.</b><span>Ver análise completa →</span></div>
-              <div className="floatingGlass performance"><small>PERFORMANCE</small><strong>82</strong><span>+6,4%</span></div>
+              <div className="laptopBase"><i/></div>
             </div>
-            <div className="base"/><div className="baseLip"/>
-          </div>
-        </div>
-
-        <div className="microStats"><div><strong>+ foco</strong><span>em cada conversa</span></div><div><strong>+ clareza</strong><span>nas suas decisões</span></div><div><strong>+ contexto</strong><span>sobre sua evolução</span></div></div>
-      </section>
-
-      <section className="whiteBlock" id="como">
-        <div className="shell sectionHead centered"><span className="eyebrow">MAIS DO QUE UMA CHAMADA DE VÍDEO</span><h2>Reuniões que mostram o que importa.</h2><p>Uma experiência de reunião desenhada para capturar contexto, revelar padrões e transformar conversas em inteligência útil.</p></div>
-        <div className="shell threeCards">
-          <article><div className="iconOrb">◉</div><h3>Reuniões em alta qualidade</h3><p>Áudio, vídeo e compartilhamento em uma interface limpa, rápida e sem distrações.</p><div className="miniMock videoMock"><span/><span/><span/></div></article>
-          <article><div className="iconOrb">⌁</div><h3>Análises inteligentes</h3><p>Veja momentos, padrões e sinais que normalmente desaparecem quando a reunião termina.</p><div className="miniMock graphMock"><i/><i/><i/><i/></div></article>
-          <article id="skills"><div className="iconOrb">✦</div><h3>Skills</h3><p>Analise comunicação, clareza, escuta e condução sem transformar sua evolução em achismo.</p><div className="miniMock rings"><b>88</b><b>91</b><b>84</b></div></article>
-        </div>
-      </section>
-
-      <section id="human" className="humanSection">
-        <div className="shell humanGrid">
-          <div className="humanCopy"><span className="darkEyebrow">HUMAN PRO · DENTRO DA ZYVO</span><h2>Pergunte.<br/>Entenda.<br/><span>Evolua.</span></h2><p>O Human Pro cruza o contexto das suas reuniões para revelar padrões, pontos cegos e competências que podem estar limitando sua performance.</p><p className="humanStrong">Não é outro aplicativo. É uma segunda inteligência dentro da ZYVO.</p></div>
-          <div className="humanPanel">
-            <div className="humanPanelTop"><span className="orb"/><b>HUMAN PRO</b><small>Histórico</small></div>
-            <div className="questionCloud">{questions.map((q)=><span key={q}>{q}</span>)}</div>
-            <div className="chatBox"><div><small>LEITURA DO SEU HISTÓRICO</small><b>Seu gargalo não parece ser falta de argumentos.</b><p>Você tende a apresentar antes de investigar. O próximo desenvolvimento pode estar em venda consultiva, descoberta e perguntas de diagnóstico.</p></div><button>↗</button></div>
           </div>
         </div>
       </section>
 
-      <section className="toolsSection shell">
-        <div className="sectionHead centered"><span className="eyebrow">TUDO NO MESMO LUGAR</span><h2>Ferramentas que trabalham com você.</h2><p>Menos troca de contexto. Mais continuidade antes, durante e depois da reunião.</p></div>
-        <div className="toolGrid">{tools.map(([title,text],i)=><article key={title}><span className="toolIcon">{["◉","▶","30","✎","▣","=","▤","✦"][i]}</span><div><h3>{title}</h3><p>{text}</p></div><b>↗</b></article>)}</div>
+      <section className="showcase" id="como">
+        <div className="showcaseGrid shell">
+          <div className="showcaseCopy">
+            <span className="eyebrow">MAIS DO QUE UMA CHAMADA DE VÍDEO</span>
+            <h2>Reuniões que<br/>mostram o que<br/>importa.</h2>
+            <p>Enquanto você conversa, a ZYVO analisa padrões da sua comunicação, argumentação, escuta e condução. E mostra o que está funcionando, o que está te limitando e em que pontos você pode evoluir.</p>
+            <a className="underLink" href="#skills">Conhecer a plataforma <b>→</b></a>
+          </div>
+          <div className="featureCards" id="skills">
+            <article className="glassCard cardLaptop"><div className="cardIcon">▣</div><h3>Reuniões<br/>em alta qualidade</h3><p>Estabilidade, segurança<br/>e uma experiência fluida.</p><div className="deviceSlice"/></article>
+            <article className="glassCard"><div className="cardIcon">|||</div><h3>Análises<br/>inteligentes</h3><p>Entenda seus padrões<br/>e identifique oportunidades.</p><div className="bars"><i/><i/><i/><i/><i/><i/></div></article>
+            <article className="glassCard"><div className="cardIcon">◉</div><h3>Evolução<br/>contínua</h3><p>Aplique, pratique<br/>e veja a diferença.</p><div className="waves"><i/><b/></div></article>
+          </div>
+        </div>
       </section>
 
-      <section className="intelligenceBand"><div className="shell intelligenceGrid"><div><span className="darkEyebrow">INTELIGÊNCIA DE PERFORMANCE HUMANA</span><h2>A ZYVO começa onde o resumo da reunião termina.</h2></div><div className="flow"><span>Reunião</span><i>→</i><span>Comportamento</span><i>→</i><span>Padrões</span><i>→</i><span>Pontos cegos</span><i>→</i><span>Prática</span></div></div></section>
-
-      <section id="contato" className="finalCta shell">
-        <div className="finalGlow"/><img src="/zyvo-logo.svg" alt="ZYVO"/><span className="darkEyebrow">PRÓXIMA GERAÇÃO DE REUNIÕES</span><h2>Suas próximas reuniões podem mostrar muito mais sobre você.</h2><p>Videoconferência com inteligência de performance humana.</p><a href="#inicio" className="whitePill">Começar agora</a>
+      <section className="humanRef" id="human">
+        <div className="humanBackdrop"/>
+        <div className="humanGrid shell">
+          <div className="humanCopy">
+            <span className="eyebrow dark">HUMAN PRO</span>
+            <h2>Pergunte.<br/>Entenda.<br/>Evolua.</h2>
+            <p>O Human Pro é uma ferramenta dentro da ZYVO que analisa suas reuniões e responde, com base no seu histórico, o que você precisa desenvolver. Sem achismos. Sem generalidades.</p>
+            <a className="outlinePill" href="#contato">Conhecer o Human Pro <span>→</span></a>
+          </div>
+          <div className="humanChat">
+            <div className="questionStack">{questions.map((q)=><div key={q}>{q}</div>)}</div>
+            <div className="askBox"><span>Digite sua pergunta...</span><button>›</button></div>
+          </div>
+          <div className="humanPortrait"/>
+          <div className="humanBenefits"><span>MAIS<br/>AUTONOMIA</span><span>MAIS<br/>CONSCIÊNCIA</span><span>MAIS<br/>RESULTADOS</span></div>
+        </div>
       </section>
 
-      <footer className="shell"><img src="/zyvo-logo.svg" alt="ZYVO"/><span>© 2026 ZYVO</span><small>Performance humana aplicada a reuniões.</small></footer>
+      <section className="toolsRef" id="planos">
+        <div className="toolsGrid shell">
+          <div className="toolsCopy"><span className="eyebrow">TUDO EM UM SÓ LUGAR</span><h2>Ferramentas que<br/>trabalham com você.</h2><p>Reuniões, gravações, análises, anotações, compartilhamento, agenda e muito mais.<br/>Tudo integrado para você focar no que realmente importa: evoluir.</p><a className="underLink" href="#contato">Explorar recursos <b>→</b></a></div>
+          <div className="toolCards">{tools.map(([icon,title,sub])=><article key={title}><span className="toolGlyph">{icon}</span><b>{title}</b>{sub&&<small>{sub}</small>}</article>)}</div>
+        </div>
+      </section>
+
+      <section className="finalRef" id="contato">
+        <div className="finalArt"/>
+        <div className="finalGrid shell">
+          <div className="finalCopy"><span className="eyebrow dark">PRONTO PARA EVOLUIR?</span><h2>Suas próximas reuniões<br/>podem levar você mais longe.</h2><p>Experimente a ZYVO e descubra uma nova forma de se comunicar,<br/>aprender e alcançar resultados.</p><div className="finalActions"><a className="lightPill" href="#inicio">Começar agora</a><a className="outlinePill small" href="#inicio">Falar com um especialista</a></div></div>
+          <div className="finalBrand"><img src="/zyvo-logo.svg" alt="ZYVO"/><span>REUNIÕES INTELIGENTES.<br/>PESSOAS EXTRAORDINÁRIAS.</span><small>DISPONÍVEL PARA　●　▣　◎</small></div>
+        </div>
+      </section>
     </main>
   );
 }
