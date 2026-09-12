@@ -1,73 +1,91 @@
-const features = [
-  { tag: "SKILLS", title: "Veja a reunião por dentro.", text: "A Skills transforma cada encontro em uma leitura objetiva da sua atuação. Você revisita momentos importantes, entende o que aconteceu e acompanha sua performance sem depender apenas da memória." },
-  { tag: "HUMAN PRO", title: "Descubra o que está faltando em você.", text: "Human Pro é uma ferramenta dentro da ZYVO. Ela cruza o contexto das suas reuniões para investigar padrões, pontos cegos e competências que podem estar limitando sua performance." },
+const tools = [
+  ["Reuniões", "Vídeo com foco em contexto e performance."],
+  ["Gravações", "Reassista momentos e decisões importantes."],
+  ["Agenda", "Organize sua rotina de reuniões."],
+  ["Anotações", "Registre ideias sem sair da experiência."],
+  ["Compartilhar tela", "Apresente sem quebrar o fluxo."],
+  ["Calculadora", "Ferramentas úteis sempre por perto."],
+  ["Criar slides", "Prepare materiais dentro do ecossistema."],
+  ["Skills", "Analise sua atuação em cada reunião."],
 ];
 
-const questions = ["Onde estou errando?", "O que está me faltando?", "O que preciso aprender?", "O que preciso mudar no meu comportamento?", "O que devo praticar?"];
+const questions = [
+  "Onde estou errando?",
+  "O que está me faltando?",
+  "O que preciso aprender?",
+  "O que preciso mudar no meu comportamento?",
+  "O que devo praticar?",
+];
 
 export default function Home() {
   return (
     <main>
-      <header className="nav shell">
-        <a className="brand" href="#inicio" aria-label="ZYVO"><img src="/zyvo-logo.svg" alt="ZYVO" /></a>
-        <nav><a href="#zyvo">ZYVO</a><a href="#skills">Skills</a><a href="#human">Human Pro</a><a href="#como">Como funciona</a></nav>
-        <a className="navCta" href="#cta">Conhecer a ZYVO</a>
+      <header className="topbar shell">
+        <a href="#inicio" className="logo"><img src="/zyvo-logo.svg" alt="ZYVO" /></a>
+        <nav>
+          <a href="#inicio">Início</a><a href="#skills">Skills</a><a href="#human">Human Pro</a><a href="#planos">Planos</a><a href="#contato">Contato</a>
+        </nav>
+        <div className="topActions"><button className="searchBtn" aria-label="Buscar">⌕</button><a href="#contato" className="blackPill">Começar agora</a></div>
       </header>
 
       <section id="inicio" className="hero shell">
-        <div className="eyebrow">VIDEOCONFERÊNCIA + INTELIGÊNCIA DE PERFORMANCE HUMANA</div>
-        <h1>A reunião termina.<br/><span>A ZYVO continua lendo o que ficou.</span></h1>
-        <p className="heroText">Você fala, vende, ensina, negocia e lidera. A ZYVO transforma essas conversas em inteligência para mostrar padrões que você normalmente não percebe enquanto está dentro da reunião.</p>
-        <div className="actions"><a className="primary" href="#zyvo">Entender a ZYVO</a><a className="secondary" href="#human">Ver Human Pro</a></div>
+        <span className="eyebrow">REUNIÕES INTELIGENTES</span>
+        <h1>Você termina uma reunião.<br/><span>A ZYVO descobre o que você não percebeu nela.</span></h1>
+        <p>A ZYVO é a plataforma de videoconferência com inteligência de performance humana. Faça suas reuniões, analise seu comportamento e descubra o que realmente precisa desenvolver.</p>
+        <div className="heroActions"><a className="blackPill large" href="#skills">Começar agora</a><a className="textLink" href="#como">Ver como funciona <b>↗</b></a></div>
 
-        <div className="stage" aria-label="Interface conceitual da ZYVO">
-          <div className="glow glowA"/><div className="glow glowB"/>
-          <div className="meetingCard glass">
-            <div className="meetingTop"><span>Reunião estratégica</span><span className="live">● AO VIVO</span></div>
-            <div className="peopleGrid"><div className="person p1"><span>SB</span><small>Sandro</small></div><div className="person p2"><span>MD</span><small>Marina</small></div><div className="person p3"><span>RC</span><small>Rafael</small></div></div>
-            <div className="meetingBottom"><button>◉</button><button>⌁</button><button>⌁</button><button className="leave">Sair</button></div>
+        <div className="deviceScene">
+          <div className="aurora a1"/><div className="aurora a2"/>
+          <div className="laptop">
+            <div className="screen">
+              <div className="screenTop"><img src="/zyvo-logo.svg" alt="ZYVO"/><span>Reunião estratégica</span><small>•••</small></div>
+              <div className="meetingLayout">
+                <div className="speaker"><div className="face faceMain"><span>SB</span></div><div className="nameTag">Sandro Bello</div></div>
+                <div className="sidePeople"><div className="mini faceWarm"><span>AM</span></div><div className="mini faceDark"><span>RC</span></div></div>
+              </div>
+              <div className="controls"><i>⌁</i><i>◉</i><i>⌁</i><i>▣</i><button>Sair</button></div>
+              <div className="floatingGlass insight"><small>INSIGHT DA REUNIÃO</small><b>Você apresentou a solução antes de explorar totalmente o problema.</b><span>Ver análise completa →</span></div>
+              <div className="floatingGlass performance"><small>PERFORMANCE</small><strong>82</strong><span>+6,4%</span></div>
+            </div>
+            <div className="base"/><div className="baseLip"/>
           </div>
-          <div className="insightCard glass">
-            <span className="microLabel">PADRÃO RECORRENTE</span>
-            <strong>Você acelera a solução antes de explorar o problema.</strong>
-            <p>Esse comportamento aparece em diferentes conversas e pode reduzir sua capacidade de construir valor.</p>
-            <div className="chip">Investigar com Human Pro →</div>
+        </div>
+
+        <div className="microStats"><div><strong>+ foco</strong><span>em cada conversa</span></div><div><strong>+ clareza</strong><span>nas suas decisões</span></div><div><strong>+ contexto</strong><span>sobre sua evolução</span></div></div>
+      </section>
+
+      <section className="whiteBlock" id="como">
+        <div className="shell sectionHead centered"><span className="eyebrow">MAIS DO QUE UMA CHAMADA DE VÍDEO</span><h2>Reuniões que mostram o que importa.</h2><p>Uma experiência de reunião desenhada para capturar contexto, revelar padrões e transformar conversas em inteligência útil.</p></div>
+        <div className="shell threeCards">
+          <article><div className="iconOrb">◉</div><h3>Reuniões em alta qualidade</h3><p>Áudio, vídeo e compartilhamento em uma interface limpa, rápida e sem distrações.</p><div className="miniMock videoMock"><span/><span/><span/></div></article>
+          <article><div className="iconOrb">⌁</div><h3>Análises inteligentes</h3><p>Veja momentos, padrões e sinais que normalmente desaparecem quando a reunião termina.</p><div className="miniMock graphMock"><i/><i/><i/><i/></div></article>
+          <article id="skills"><div className="iconOrb">✦</div><h3>Skills</h3><p>Analise comunicação, clareza, escuta e condução sem transformar sua evolução em achismo.</p><div className="miniMock rings"><b>88</b><b>91</b><b>84</b></div></article>
+        </div>
+      </section>
+
+      <section id="human" className="humanSection">
+        <div className="shell humanGrid">
+          <div className="humanCopy"><span className="darkEyebrow">HUMAN PRO · DENTRO DA ZYVO</span><h2>Pergunte.<br/>Entenda.<br/><span>Evolua.</span></h2><p>O Human Pro cruza o contexto das suas reuniões para revelar padrões, pontos cegos e competências que podem estar limitando sua performance.</p><p className="humanStrong">Não é outro aplicativo. É uma segunda inteligência dentro da ZYVO.</p></div>
+          <div className="humanPanel">
+            <div className="humanPanelTop"><span className="orb"/><b>HUMAN PRO</b><small>Histórico</small></div>
+            <div className="questionCloud">{questions.map((q)=><span key={q}>{q}</span>)}</div>
+            <div className="chatBox"><div><small>LEITURA DO SEU HISTÓRICO</small><b>Seu gargalo não parece ser falta de argumentos.</b><p>Você tende a apresentar antes de investigar. O próximo desenvolvimento pode estar em venda consultiva, descoberta e perguntas de diagnóstico.</p></div><button>↗</button></div>
           </div>
         </div>
       </section>
 
-      <section id="zyvo" className="section shell intro">
-        <div><span className="kicker">O QUE É A ZYVO</span><h2>Não é só uma chamada de vídeo.<br/>É contexto acumulado sobre como você performa.</h2></div>
-        <p>A ZYVO é uma plataforma de videoconferência construída em torno de performance humana. Você realiza reuniões normalmente. A diferença é que o histórico deixa de ser apenas arquivo: ele passa a revelar recorrências na forma como você explica, pergunta, argumenta, reage, negocia e conduz.</p>
+      <section className="toolsSection shell">
+        <div className="sectionHead centered"><span className="eyebrow">TUDO NO MESMO LUGAR</span><h2>Ferramentas que trabalham com você.</h2><p>Menos troca de contexto. Mais continuidade antes, durante e depois da reunião.</p></div>
+        <div className="toolGrid">{tools.map(([title,text],i)=><article key={title}><span className="toolIcon">{["◉","▶","30","✎","▣","=","▤","✦"][i]}</span><div><h3>{title}</h3><p>{text}</p></div><b>↗</b></article>)}</div>
       </section>
 
-      <section className="quoteBand"><div className="shell"><p>Uma reunião pode ser acaso.<br/><strong>Um padrão repetido já é informação.</strong></p></div></section>
+      <section className="intelligenceBand"><div className="shell intelligenceGrid"><div><span className="darkEyebrow">INTELIGÊNCIA DE PERFORMANCE HUMANA</span><h2>A ZYVO começa onde o resumo da reunião termina.</h2></div><div className="flow"><span>Reunião</span><i>→</i><span>Comportamento</span><i>→</i><span>Padrões</span><i>→</i><span>Pontos cegos</span><i>→</i><span>Prática</span></div></div></section>
 
-      <section id="skills" className="section shell featureGrid">
-        {features.map((item) => (
-          <article className="featureCard" key={item.tag} id={item.tag === "HUMAN PRO" ? "human" : undefined}>
-            <span className="kicker">{item.tag}</span><h3>{item.title}</h3><p>{item.text}</p>
-            {item.tag === "SKILLS" ? (
-              <div className="skillVisual"><div className="timeline"><i style={{width:"78%"}}/><i style={{width:"58%"}}/><i style={{width:"91%"}}/></div><div className="moment"><span>01:48</span><b>Momento importante identificado</b><small>Volte exatamente ao trecho que merece sua atenção.</small></div></div>
-            ) : (
-              <div className="humanVisual"><div className="humanHead"><span className="orb"/> HUMAN PRO</div><div className="questionList">{questions.slice(0,3).map(q => <span key={q}>{q}</span>)}</div><div className="answer"><small>LEITURA DO HISTÓRICO</small><b>Seu gargalo não parece ser falta de argumentos.</b><p>Você tende a apresentar antes de investigar. O próximo desenvolvimento pode estar em venda consultiva e perguntas de diagnóstico.</p></div></div>
-            )}
-          </article>
-        ))}
+      <section id="contato" className="finalCta shell">
+        <div className="finalGlow"/><img src="/zyvo-logo.svg" alt="ZYVO"/><span className="darkEyebrow">PRÓXIMA GERAÇÃO DE REUNIÕES</span><h2>Suas próximas reuniões podem mostrar muito mais sobre você.</h2><p>Videoconferência com inteligência de performance humana.</p><a href="#inicio" className="whitePill">Começar agora</a>
       </section>
 
-      <section id="como" className="section shell how">
-        <span className="kicker">COMO FUNCIONA</span><h2>Não diga apenas como eu fui.<br/><span>Diga o que eu ainda não consigo enxergar.</span></h2>
-        <div className="steps"><div><em>01</em><b>Reunião</b><p>A conversa acontece dentro da ZYVO ou entra pelo seu histórico.</p></div><div><em>02</em><b>Padrão</b><p>A plataforma observa recorrências em diferentes situações, não apenas um episódio isolado.</p></div><div><em>03</em><b>Lacuna</b><p>O Human Pro ajuda a transformar o padrão em uma competência concreta para desenvolver.</p></div><div><em>04</em><b>Nova evidência</b><p>Você volta às próximas reuniões e compara se o comportamento realmente mudou.</p></div></div>
-      </section>
-
-      <section className="darkSection"><div className="shell darkGrid"><div><span className="darkKicker">INTELIGÊNCIA APLICADA À PESSOA</span><h2>Talvez o seu problema não seja comunicação.</h2><p>Pode ser persuasão. Diagnóstico. Negociação. Didática. Conhecimento do produto. Escuta. Liderança. Estrutura de raciocínio.</p><p>A ZYVO existe para reduzir o achismo e ajudar você a descobrir onde concentrar desenvolvimento.</p></div><div className="darkPanel"><span>HUMAN PRO</span>{questions.map(q => <div className="darkQ" key={q}>{q}<b>↗</b></div>)}</div></div></section>
-
-      <section className="section shell manifesto"><p className="bigCopy">Você já participa de reuniões.<br/><strong>Agora elas podem começar a revelar por que algumas conversas funcionam — e outras não.</strong></p></section>
-
-      <section id="cta" className="cta shell"><div className="ctaGlow"/><img src="/zyvo-logo.svg" alt="ZYVO" /><h2>Sua próxima reunião pode ser mais do que uma reunião.</h2><p>Ela pode ser a próxima evidência sobre o que você precisa desenvolver.</p><a className="primary light" href="#inicio">Conhecer a ZYVO</a></section>
-
-      <footer className="shell"><img src="/zyvo-logo.svg" alt="ZYVO"/><span>Videoconferência com inteligência de performance humana.</span><small>© 2026 ZYVO</small></footer>
+      <footer className="shell"><img src="/zyvo-logo.svg" alt="ZYVO"/><span>© 2026 ZYVO</span><small>Performance humana aplicada a reuniões.</small></footer>
     </main>
   );
 }
