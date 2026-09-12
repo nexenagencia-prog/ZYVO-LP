@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 340" role="img" aria-label="ZYVO">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#aeb6c6"/><stop offset=".55" stop-color="#586171"/><stop offset="1" stop-color="#111827"/></linearGradient></defs>
+  <g fill="url(#g)">
+    <path d="M42 72h180v30L86 266h150v38H30v-35L165 110H42z"/>
+    <path d="M252 72h47l82 92 82-92h48L402 195v109h-43V195z"/>
+    <path d="M524 72h48l85 171 86-171h48L680 304h-46z"/>
+    <path fill-rule="evenodd" d="M878 62c89 0 146 51 146 126s-57 126-146 126-146-51-146-126S789 62 878 62zm0 40c-62 0-101 34-101 86s39 86 101 86 101-34 101-86-39-86-101-86z"/>
+  </g>
+</svg>
